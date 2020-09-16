@@ -7,3 +7,7 @@ def index(request):
 
 def about(request):
     return render(request, 'core/about.html')
+
+
+def sidebar(request):
+    return render(request, 'core/sidebar.html')
