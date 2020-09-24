@@ -1,29 +1,45 @@
+{% load static %}
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %}{% endblock %}</title>
-       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <meta charset="utf-8">
+    <title>Responsive Sidebar Menu</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
 <body>
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-          <header class="masthead mb-auto">
-            <div class="inner">
-              <h3 class="masthead-brand">MephiHelper</h3>
-              <nav class="nav nav-masthead justify-content-center">
-                <a class="nav-link active" href="{% url 'home' %}">Главная страница</a>
-                <a class="nav-link" href="{% url 'about' %}">О нас</a>
-                <a class="nav-link sidebar" href="{% url 'sidebar' %}">Тестовая</a>
-              </nav>
-            </div>
-          </header>
+<h1 class="pretty-header left-right-line-short-header">MephiHelper</h1>
+<input type="checkbox" id="check">
+    <label for="check">
+      <i class="fas fa-bars" id="btn"></i>
+      <i class="fas fa-times" id="cancel"></i>
+    </label>
+    <div class="sidebar">
+      <header>MephiHelper</header>
+      <a href="{% url 'home' %}" >
+        <i class="fas fa-qrcode"></i>
+        <span>Main Menu</span>
+      </a>
+      <a href="#">
+        <i class="fas fa-id-card"></i>
+        <span>Contacts</span>
+      </a>
+      <a href="#">
+         <i class="fas fa-calendar"></i>
+        <span>Events</span>
+      </a>
+      <a href="{% url 'about' %}" >
+        <i class="far fa-question-circle"></i>
+        <span>About</span>
+      </a>
+      <a href="#">
+        <i class="far fa-envelope"></i>
+        <span>Report</span>
+      </a>
     </div>
-
     <main role="main" class="inner cover">
           </main>
-        <div class="container">{% block content %}{% endblock %}</div>
+    <div class="container">{% block content %}{% endblock %}</div>
 </body>
 </html>
