@@ -4,6 +4,35 @@
   padding: 0;
   text-decoration: none;
 }
+.left-right-line-short-header {
+  color: black;  - цвет заголовка
+  font-style: normal;
+  font-size: 45px;
+  text-align: center;
+  background: #949494;
+  font-family: 'Montserrat', sans-serif;
+  border-bottom: 1px solid black;
+}
+.left-right-line-short-header:before {
+  content: "";
+  border-bottom: 1px solid #4bb;
+  border-top: 1px solid #4bb;
+  width: 60px;
+  height: 0.1em;
+  position: absolute;
+  top: calc(0.55em - 0.5px);
+  margin-left: -67px;
+}
+.left-right-line-short-header:after {
+  content: "";
+  border-bottom: 1px solid #4bb;
+  border-top: 1px solid #4bb;
+  width: 60px;
+  height: 0.1em;
+  position: absolute;
+  top: calc(0.55em - 0.5px);
+  margin-left: 11px;
+}
 .sidebar{
   position: fixed;
   width: 240px;
@@ -15,7 +44,7 @@
 .sidebar header{
   font-size: 28px;
   color: white;
-  line-height: 70px;
+  line-height: 65px;
   text-align: center;
   background: #1b1b1b;
   user-select: none;
@@ -113,4 +142,132 @@ label #cancel{
     visibility: visible;
   }
 }
-/* Don't Forget to Subscribe our Channel[CodingNepal] */
+.container {
+  margin-top: 73px
+  width: 100%;
+  height: 100%;
+  margin-left: 13%;
+  background-image: url('mifi.jpg');
+}
+
+
+table {; border-collapse: separate; border-spacing: 4px;width:87%}
+table thead tr {color: #ffffff; font-weight: bold;  font-family: 'Open Sans', sans-serif;font-size: 20px;}
+table thead tr td {border-radius: 4px 4px 0 0; background: #2e82c3; text-align: center;font-family: 'Open Sans', sans-serif;font-size: 20px;width:25%}
+table tbody tr td {border: 1px solid #2e82c3; border-radius: 4px; background: #cbdfef; text-align: center;font-family: 'Open Sans', sans-serif;font-size: 20px;}
+table tbody tr td:hover {background: #a2c3dd; transition-duration: 0.2s;}
+
+
+ht {
+font-size: 28px;
+font-weight: bolder;
+
+
+}
+h2{
+ width: 77%;
+ font-family: 'Open Sans', sans-serif;
+
+}
+
+.name{
+ width: 190px;
+ text-align: center;
+ font-family: 'Open Sans', sans-serif;
+ font-size: 28px;
+ background: white;
+ border: 2px solid black;
+}
+
+.frott{
+margin-top: 5px;
+}
+
+#zatemnenie {
+        background: rgb(0 0 0 / 51%);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+      }
+#okno {
+        width: 500px;
+        height: 150px;
+        text-align: center;
+        padding: 15px;
+        border: 3px solid #000000;
+        border-radius: 10px;
+        color: #000000;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        background: #fff;
+      }
+#zatemnenie:target {display: block;}
+      .close {
+        display: block;
+        border: 1px solid #000000;
+        color: #000000;
+        padding: 10px;
+        margin: 10px;
+        text-decoration: none;
+        background: #f2f2f2;
+        font-size: 16pt;
+        cursor:pointer;
+      }
+.close:hover {background: #e6e6ff;}
+
+.babayaga {
+}
+
+
+h6{
+ width: 77%;
+ font-family: 'Open Sans', sans-serif;
+  font-size: 25px;
+}
+
+
+.round {
+width: 500px;
+}
+
+p5{
+margin-left:50%;
+}
+
+
+.contim
+{
+border-radius: 50%;
+margin-left:10px;
+border: 3px solid black;
+}
+
+
+.vk{
+margin-left:100px;
+}
+
+
+ BODY {
+    background: url(https://pbs.twimg.com/media/DoBKi5TXUAAtM1B.jpg:large) no-repeat 0px 55px;
+    opacity: 1;
+   }
+
+.podtext{
+ margin-left:10px;
+ width: 270px;
+ text-align: center;
+ font-family: 'Open Sans', sans-serif;
+ font-size: 20px;
+ font-weight: 600;
+ background: white;
+ border: 2px solid black;
+
+}

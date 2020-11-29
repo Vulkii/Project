@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <h6>Создать событие</h6>
+    <form method="post" class =  "babayaga">
+        {% csrf_token %}
+        <textarea name="title" cols="40" rows="5" class="form-control" placeholder="Введите Название" maxlength="50" required="" id="id_title"></textarea><br>
+        <textarea name="kogda" cols="40" rows="3" class="form-control" placeholder="Введите дату" maxlength="50" required="" id="id_kogda"></textarea><br>
+        <textarea name="who" cols="40" rows="3" class="form-control" placeholder="Введите имя человека, который приглашает" maxlength="50" required="" id="id_who"></textarea><br>
+        <button type="submit" class="btn btn-success">Добавить</button>
+        <span>{{ error }}</span>
+    </form>
+{% endblock %}
+

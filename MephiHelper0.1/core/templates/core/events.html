@@ -1,0 +1,24 @@
+{% extends 'core/base.html'%}
+
+{% block content %}
+    <ht>События, происходящие в НИЯУ МИФИ</ht>
+    {% for el in tasks%}
+<table>
+  <thead>
+    <tr>
+      <td>Что будет происходить</td>
+      <td>Когда это будет</td>
+      <td>Кто приглашает</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ el.title }}</td>
+      <td>{{ el.kogda }}</td>
+      <td>{{ el.who }}</td>
+    </tr>
+
+  <table/>
+
+    {% endfor %}
+{% endblock %}

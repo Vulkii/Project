@@ -1,17 +1,30 @@
-from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .forms import CreateUserForm
+from django.shortcuts import render, redirect
+from .models import Task
+from .forms import TaskForm
+from django.contrib.auth.decorators import permission_required
 
 
-
-def index(request):
-    return render(request, 'core/index.html')
 
 
 def about(request):
     return render(request, 'core/about.html')
+
+def math(request):
+    return render(request,'core/math.html')
+
+def course(request):
+    return render(request,'core/1 course.html')
+
+def coursee(request):
+    return render(request,'core/2 course.html')
+
+def helpers(request):
+    return render(request,'core/helpers.html')
+
 
 
 def registerPage(request):
@@ -54,4 +67,25 @@ def loginPage(request):
 
 def logoutUser(request):
     logout(request)
-    return redirect('login')
+    return redirect('home')
+
+def events(request):
+    tasks = Task.objects.all()
+    return render(request, 'core/events.html', {'tasks' : tasks})
+
+def create(request):
+    error = ''
+    if request.method == 'POST'  :
+        form = TaskForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('home')
+        else:
+            error = 'Форма была неверной'
+
+    form = TaskForm()
+    context = {
+        'form': form,
+        'error': error
+    }
+    return render(request, 'core/create.html', context)

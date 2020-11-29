@@ -1,11 +1,7 @@
 {% extends 'core/base.html'%}
-{% block title %}
-Cтраница о нас
-{% endblock %}
 
 {% block content %}
-    <h2>Страница о сайте</h2>
-    <p> Проводим тест гипперссылки</p>
-    <a href="https://drive.google.com/drive/folders/1mKCYW_FizsOaKTpgzcF87U2yls5MvNQV" target="_blank"> Нажми на меня</a>
-    <iframe src="https://drive.google.com/file/d/1P64QUWfWqjL00tlHQIU-LjJn1D_hnJfo/preview" width="640" height="480"></iframe>
+    <h2>Предмет</h2>
+<a  class = "frott" href="{% url 'math' %}"><img width = "200px" src="http://pngimg.com/uploads/folder/folder_PNG8772.png"></a>
+<p class = "name">Мат. анализ</p></div>
 {% endblock %}

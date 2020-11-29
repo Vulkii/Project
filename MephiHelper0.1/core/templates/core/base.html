@@ -3,11 +3,12 @@
 <html lang="en">
 <head>
    <meta charset="utf-8">
-    <title>Responsive Sidebar Menu</title>
+    <title>MephiHelper</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
 </head>
+
 <body>
 <h1 class="pretty-header left-right-line-short-header">MephiHelper</h1>
 <input type="checkbox" id="check">
@@ -21,25 +22,50 @@
         <i class="fas fa-qrcode"></i>
         <span>Main Menu</span>
       </a>
-      <a href="#">
+      <a href="{% url 'helpers' %}">
         <i class="fas fa-id-card"></i>
-        <span>Contacts</span>
+        <span>Helpers</span>
       </a>
-      <a href="#">
+      <a href="{% url 'events' %}">
          <i class="fas fa-calendar"></i>
         <span>Events</span>
       </a>
-      <a href="{% url 'about' %}" >
-        <i class="far fa-question-circle"></i>
-        <span>About</span>
-      </a>
-      <a href="#">
-        <i class="far fa-envelope"></i>
+        {% if 'core' in perms %}
+         <a href="{% url 'create' %}">
+         <i class="fas fa-share"></i>
+        <span>Create Event</span>
+
+        {% endif %}
+      <a href=#zatemnenie>
+        <i class="fa fa-envelope" ></i>
         <span>Report</span>
       </a>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'logout' %}">
+        <i class="fa fa-bath"></i>
+            <span>Logout</span> </a>
+        {% else %}
+        <a href="{% url 'register' %}">
+        <i class="fa fa-globe"></i>
+        <span>Register</span>
+      </a>
+      </a>
+        {% endif %}
     </div>
     <main role="main" class="inner cover">
           </main>
-    <div class="container">{% block content %}{% endblock %}</div>
+    <div class="container">
+        {% block content %}{% endblock %}
+
+    <div id="zatemnenie">
+      <div id="okno">
+          <p>Если вы заметили какие-либо недоработки или баги, пожалуйста, сообщите нам:</p>
+<a class = 'tg' href="https://t.me/p1lan"><img width = "50px" src="https://potokmedia.ru/wp-content/uploads/2020/07/p1_2698749_2e0ff8a5-768x768.png"></a>
+<a class = 'tg' href="https://vk.com/id288971670"><img width = "50px" src="https://camo.githubusercontent.com/56b25fae058a180d357bfc18cf05d7f380b48106/68747470733a2f2f656e6572676f62656c617275732e62792f75706c6f61642f6d656469616c6962726172792f6230632f766b5f636f6d5f6c6f676f5f7376675f373638783736382e706e67"></a>
+
+        <a href="#" class="close">Закрыть окно</a>
+      </div>
+    </div>
+
 </body>
-</html>
+</ht
